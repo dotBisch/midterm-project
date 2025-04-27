@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #ffff66;
+    --accent-color: #ff69b4;
+    --background-color: #0E0E0E;
+    --dark-color: #4b1235;
+    --correct-color: #67d154;
+    --wrong-color: #ff6980;
+    --transition: all 0.3s ease;
+    --heading-text: 'Bungee', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    line-height: 1.3;
+    font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+    font-family: var(--heading-text);
+}
+
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    padding-top: 3px;
+}
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-color);
+    border: 0.5px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: var(--heading-text);
+    letter-spacing: 1px;
+    font-size: 18px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.btn:hover {
+    color: var(--dark-color);
+}
+
+.btn::before {
+    background-color: var(--primary-color);
+}
+
+.btn:hover::before {
+    width: 100%;
+}
